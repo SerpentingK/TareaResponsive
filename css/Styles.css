@@ -1,0 +1,425 @@
+@font-face {
+    font-family: "YoungSerif";
+    src: url(/Fonts/YoungSerif-Regular.ttf);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    width: 100%;
+}
+#contenedorPrincipal{
+    width: 85%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px  10px rgba(0, 0, 0, 0.3);
+}
+/*Diseño para celulares*/
+@media screen and (min-width: 280px) {
+
+    body {  
+        font-family: sans-serif;
+    }
+
+    nav {   
+        background: #191516;
+        padding: 5px 20px;
+        width: 100%;
+        /*
+        position: fixed;
+        top: 0;
+        */
+    }
+
+    ul {    
+        list-style-type: none;
+    }
+
+    a { 
+    color: white;
+    text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .logo a:hover {
+        text-decoration: none;
+    }
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu li {
+        font-size: 16px;
+        padding: 15px 5px;
+    }
+
+    .logo a, .toggle a {
+        font-size: 20px;
+    }
+
+    .button.secondary {
+        border-bottom: 1px #444 solid;
+    }
+    .toggle{
+        order: 1;
+        margin-right: 30px;
+    }
+    #menuButtons{
+        background-color: transparent;
+        border: 0px;
+        background-image: url(/img/menu_318-224318.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 20px;
+        width: 20px;
+    }
+    .item{
+        width: 100%;
+        text-align: center;
+        order: 3;
+        display: none;
+        margin-right: 30px;
+    }
+    .item.button{
+        order: 2;
+    }
+    .item.active{
+        display: block;
+    }
+    #contenedorPrincipal{
+        margin-top: 50px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .subtitle{
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .text{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    #map{
+        border: 2px solid;
+        height: 200px;
+    }
+    footer{
+        background-color: #191516;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .info{
+        color: white;
+        margin: 3px;
+        font-family: sans-serif;
+        font-size: 15px;
+    }
+    .imgs{
+        margin: 20px;
+        width: 70%;
+    }
+    .imgs2{
+        width: 50%;
+        margin: 10px;
+    }
+    .contenedorArtistas{
+        display: flex;
+        flex-direction: column;
+    }
+    .contImgs2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+    .names{
+        margin: 15px;
+    }
+    /*Acordeon*/
+    .accordion {
+        box-sizing: border-box;
+        box-shadow: 5px 10px 10px rgba(68, 68, 68, 0.733);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 80%;
+        height: auto;
+        font-family: sans-serif;
+        border: 2px solid rgb(73, 73, 73);
+        border-radius: 10px;
+    }
+    /*Contenedor común plegar/desplegar*/
+    .accordion-toggle, .accordion-header{
+        font-size: 20px;
+        width: 100%;
+        height: 3em;
+        line-height: 3em;
+        cursor: pointer;
+    }
+    /*El botón que pliega/despliega*/
+    .accordion-toggle {
+        opacity: 0;
+        background-color: transparent;
+        z-index: 1;
+        margin-bottom: 5px;
+    }
+    /*Bloque para el título*/
+    .accordion-header{
+        background-color: #444;
+        color: #646464;
+        position: relative;
+        margin-top: -3em;
+        padding-left: 10px;
+        border-radius:10px;
+    }
+    
+    /*Bloque replegable con el contenido */
+    .accordion-content {
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+        color: #7f8787;
+        overflow: auto;
+        position: relative;
+        width: 100%;
+        height: 250px;
+        margin-bottom: -250px;
+        padding: 20px;
+        transition: margin 0.3s ease 0.1s;
+        font-size: 18px;
+    }
+    .accordion-toggle:checked + .accordion-header + .accordion-content {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+    .accordion-header::before,
+    .accordion-toggle:checked + .accordion-header::before {
+        content: '+';
+        display: inline-block;
+        text-align: center;
+        width: 1em;
+        font-size: 1.em;
+    }
+    .accordion-toggle:checked + .accordion-header::before {
+        content:'-';
+    }
+    
+    .accordion-toggle:hover + .accordion-header{
+        background-color: #f7f1f1;
+    }
+    .accordion-toggle:checked + .accordion-header {
+        background-color: #fff;
+    }
+    #registerButton{
+        background-color: #191516;
+        padding: 20px;
+        border: 1px #444 solid;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+        margin: 30px;
+    }
+    #registerButton:hover{
+        background-color: #646464;
+        text-decoration: none;
+    }
+    
+    #contenedorRegistro{
+        width: 75%;
+        height: auto;
+        padding: 20px;
+        margin: 20px;
+        background-color: #272322;
+        border-radius: 5px;
+    }
+    #contenedorInput{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #imgInput{
+        width: 0;
+    }
+    .inputs{
+        margin: 10px;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid white;
+        font-size: 15px;
+    }
+    .inputDate {
+        filter: invert(1);
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid black;
+        padding: 4px;
+    }
+    
+    #labelExpo{
+        color: white;
+        margin-top: 15px;
+    }
+    .Galeria{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+
+
+/*Estilo Tablet*/
+@media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    .item.button {
+        width: 20%;
+        order: 1;
+        display: block;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: #37312f;
+        border: 1px #272322 solid;
+    }
+    .button.secondary a {
+        background: transparent;
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: #67615a;
+        border-color: #33302d;
+    }
+    .button.secondary a:hover {
+        color: #292929;
+        background: rgb(190, 190, 190);
+    }
+}
+
+
+
+
+/*Estilo Computador*/
+@media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+    nav{
+        position: relative;
+    }
+    .Galeria{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        height: auto;
+        margin-bottom: 50px;
+    }
+    .Galeria img{
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        filter: brightness(80%);
+        transition: .7s ease;
+    }
+    .Galeria img:hover{
+        width: 15%;
+        opacity: 1;
+        filter: brightness(130%);
+    }
+    .contenedorArtistas{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .imgs2{
+        margin: 20px;
+        width: 60%;
+        transition:all .5s ease-in-out;
+    }
+    .imgs2:hover{
+        filter: sepia(70%);
+    }
+    .contImgs2{
+        width: 30%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contImgs2 .names{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: black;
+    }   
+    #contenedorRegistro{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #imgInput{
+        width: 60%;
+    }
+    .accordion-content{
+        font-size: 25px;
+    }
+    #registerButton{
+        font-size: 25px;
+        text-align: center;
+    }
+}
